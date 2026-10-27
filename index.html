@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Atelier Foreman</title>
+<meta name="description" content="Atelier Foreman, peinture décorative à Paris : enduits décoratifs, patines, faux marbres, faux bois, trompe-l'œil et dorure. Une mère et sa fille, peintres décoratrices.">
+<meta property="og:title" content="Atelier Foreman — Peinture décorative à Paris">
+<meta property="og:description" content="Enduits décoratifs, patines, faux marbres, trompe-l'œil et dorure, pour les boutiques comme pour les particuliers.">
+<meta property="og:image" content="https://atelier-foreman.fr/img/hero-ciel.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23F3EBDD'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-style='italic' text-anchor='middle' fill='%231B2130'%3EF%3C/text%3E%3C/svg%3E">
+<style>*,*::before,*::after{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Mise en page : un book d'atelier — ouverture éditoriale, planches de techniques en deux familles, comparaisons avant/après */
+:root{
+  --enduit:#F3EBDD;      /* crème, fond */
+  --enduit-2:#E9DECB;    /* surface secondaire */
+  --encre:#1B2130;       /* bleu-noir, texte */
+  --encre-2:#4A5262;     /* texte secondaire */
+  --ocre:#A87A22;        /* ocre doré, accent */
+  --veronese:#2E6A5C;    /* vert Véronèse, accent secondaire */
+  --filet:rgba(27,33,48,.16);
+  --display:"Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --texte:"Figtree", "Helvetica Neue", Arial, sans-serif;
+  --util:"IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+/* Site volontairement toujours clair, même si l'ordinateur est en mode sombre */
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{background:var(--enduit);color:var(--encre);font-family:var(--texte);font-size:1.0625rem;line-height:1.6}
+.page{max-width:72rem;margin:0 auto;padding-inline:clamp(1rem,4vw,2.5rem)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ocre);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:500;text-wrap:balance;margin:0;line-height:1.08}
+p{margin:0}
+figure{margin:0}
+img{display:block;max-width:100%}
+.label{font-family:var(--util);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--encre-2)}
+
+/* En-tête */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--enduit);border-bottom:1px solid var(--filet)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:.5rem 1rem;padding-block:.9rem;flex-wrap:wrap}
+.marque{font-family:var(--display);font-size:1.35rem;font-style:italic;text-decoration:none}
+.marque b{font-style:normal;font-weight:600}
+.nav ul{display:flex;gap:1.25rem;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.nav ul a{text-decoration:none;font-size:.9rem;color:var(--encre-2)}
+.nav ul a:hover{color:var(--encre)}
+
+/* Ouverture */
+.hero{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:end;padding-block:clamp(2.5rem,7vw,5rem) clamp(2rem,5vw,3.5rem)}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);letter-spacing:-.01em;margin-top:1rem}
+.hero h1 em{color:var(--ocre);font-weight:400}
+.hero .chapo{margin-top:1.5rem;max-width:36rem;font-size:1.15rem;color:var(--encre-2)}
+.hero .actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:2rem}
+.btn{display:inline-block;padding:.8rem 1.4rem;font-weight:600;font-size:.95rem;text-decoration:none;border:1.5px solid var(--encre);border-radius:2px;background:transparent;color:var(--encre);cursor:pointer;font-family:var(--texte)}
+.btn.plein{background:var(--encre);color:var(--enduit)}
+.btn:hover{border-color:var(--ocre)}
+.hero-photo{position:relative;aspect-ratio:4/3;max-width:100%;overflow:hidden;background:var(--enduit-2)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.legende{font-family:var(--util);font-size:.72rem;letter-spacing:.05em;color:var(--encre-2);margin-top:.6rem}
+
+/* Repères */
+.repere{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--filet);border-bottom:1px solid var(--filet)}
+.repere div{padding:1.25rem 1rem;display:grid;gap:.25rem;align-content:start}
+.repere div+div{border-left:1px solid var(--filet)}
+.repere strong{font-family:var(--display);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:500;font-variant-numeric:tabular-nums}
+
+section{padding-block:clamp(3rem,7vw,5.5rem)}
+.titre-section{display:grid;gap:.6rem;margin-bottom:2.25rem;max-width:42rem}
+.titre-section h2{font-size:clamp(2rem,4.6vw,3.1rem)}
+.titre-section p{color:var(--encre-2)}
+
+/* Le duo */
+.duo-photo{margin:0 0 clamp(2rem,5vw,3.5rem)}
+.duo-photo img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:50% 40%;background:var(--enduit-2)}
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1.5rem,4vw,3rem)}
+.portrait{display:grid;gap:.9rem;align-content:start;min-width:0}
+.portrait .cadre{aspect-ratio:4/5;max-width:100%;overflow:hidden;background:var(--enduit-2)}
+.portrait .cadre img{width:100%;height:100%;object-fit:cover}
+.portrait .vide{border:1px dashed var(--filet);display:grid;place-items:center;padding:1rem;text-align:center;color:var(--encre-2);font-family:var(--util);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase}
+.portrait h3{font-size:1.75rem}
+.portrait .role{font-family:var(--util);font-size:.8rem;color:var(--veronese);letter-spacing:.04em}
+.portrait p{color:var(--encre-2);max-width:34rem}
+
+/* Savoir-faire */
+.famille{display:grid;gap:1.25rem}
+.famille + .famille{margin-top:3.5rem}
+.famille-tete{display:flex;align-items:baseline;justify-content:space-between;gap:.5rem 1rem;flex-wrap:wrap;border-top:2px solid var(--encre);padding-top:.9rem}
+.famille-tete h3{font-size:clamp(1.5rem,3vw,2rem)}
+.planches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.75rem 1.25rem}
+.planche{display:grid;gap:.65rem;align-content:start;min-width:0}
+.planche .photo{aspect-ratio:4/5;max-width:100%;overflow:hidden;background:var(--enduit-2)}
+.planche .photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.planche:hover .photo img{transform:scale(1.03)}
+.planche .photo.vide{border:1px dashed var(--filet);display:grid;place-items:center;padding:1rem;text-align:center;color:var(--encre-2);font-family:var(--util);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+
+/* Côté artistes */
+.artistes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1.5rem,4vw,3rem);background:var(--enduit-2);padding:clamp(1.5rem,4vw,3rem)}
+.artiste{display:grid;gap:.75rem;align-content:start;min-width:0}
+.artiste .cadre{aspect-ratio:4/5;max-width:100%;border:1px dashed var(--filet);display:grid;place-items:center;padding:1rem;text-align:center;color:var(--encre-2);font-family:var(--util);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+.artiste .cadre.photo-art{border:0;padding:0;overflow:hidden;background:var(--enduit)}
+.artiste .cadre.photo-art img{width:100%;height:100%;object-fit:cover}
+.artiste .discipline{font-family:var(--display);font-style:italic;font-size:clamp(1.8rem,4vw,2.6rem);color:var(--ocre);line-height:1}
+.artiste h3{font-size:1.3rem}
+.artiste p{color:var(--encre-2);font-size:.98rem}
+.planche h4{font-family:var(--display);font-weight:500;font-size:1.35rem;margin:0}
+.planche p{font-size:.95rem;color:var(--encre-2)}
+
+/* Livret des enduits */
+.planche p a{color:var(--veronese);font-weight:600}
+.livret-ouverture{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:end;margin-bottom:clamp(2rem,5vw,3.5rem)}
+.livret-une{aspect-ratio:3/4;max-width:100%;overflow:hidden;background:var(--enduit-2)}
+.livret-une img{width:100%;height:100%;object-fit:cover}
+.livret-texte{display:grid;gap:1rem;min-width:0}
+.livret-texte h2{font-size:clamp(2.4rem,6vw,4.4rem);font-style:italic;font-weight:400}
+.livret-texte p{color:var(--encre-2);max-width:32rem}
+.livret-compte{color:var(--ocre)}
+.livret-ateliers{display:grid;gap:.3rem;border-top:1px solid var(--filet);padding-top:.8rem}
+.livret-ateliers span + span{font-family:var(--display);font-size:1.15rem;color:var(--encre)}
+.livret-grille{columns:4 13rem;column-gap:.9rem}
+.pl{break-inside:avoid;margin:0 0 1.1rem;display:grid;gap:.4rem}
+.pl button{display:block;padding:0;border:0;background:var(--enduit-2);cursor:zoom-in;width:100%}
+.pl img{width:100%;height:auto}
+.pl figcaption{font-size:.9rem;display:flex;gap:.6rem;align-items:baseline}
+.pl figcaption span{font-family:var(--util);font-size:.7rem;letter-spacing:.08em;color:var(--encre-2);font-variant-numeric:tabular-nums}
+dialog#visionneuse{max-width:min(92vw,60rem);max-height:94vh;width:auto;padding:1rem;border:0;background:var(--enduit);color:var(--encre)}
+dialog#visionneuse::backdrop{background:rgba(10,12,18,.82)}
+dialog#visionneuse figure{display:grid;gap:.6rem}
+dialog#visionneuse img{max-height:76vh;width:auto;margin:0 auto}
+dialog#visionneuse figcaption{font-family:var(--util);font-size:.8rem;text-align:center}
+.v-commandes{display:flex;justify-content:center;gap:.6rem;margin-top:.8rem}
+
+/* Avant / après */
+.comparaisons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1.25rem,3vw,2rem)}
+.compare{display:grid;gap:.7rem;min-width:0}
+.compare .scene{position:relative;aspect-ratio:4/5;max-width:100%;overflow:hidden;background:var(--enduit-2);user-select:none;touch-action:pan-y}
+.compare .scene img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.compare .avant{clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0)}
+.compare .trait{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;margin-left:-1px;background:#F4EFE3;box-shadow:0 0 0 1px rgba(0,0,0,.25);pointer-events:none}
+.compare .trait::after{content:"";position:absolute;top:50%;left:50%;width:2.2rem;height:2.2rem;margin:-1.1rem 0 0 -1.1rem;border-radius:50%;background:#F4EFE3;box-shadow:0 1px 4px rgba(0,0,0,.35)}
+.compare .tag{position:absolute;top:.6rem;padding:.2rem .5rem;background:rgba(14,18,26,.7);color:#F4EFE3;font-family:var(--util);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;pointer-events:none}
+.compare .tag.g{left:.6rem}.compare .tag.d{right:.6rem}
+.compare input[type=range]{width:100%;accent-color:var(--ocre)}
+.compare h3{font-size:1.35rem}
+.compare p{font-size:.95rem;color:var(--encre-2)}
+
+/* Pour qui */
+.publics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:2px solid var(--encre)}
+.publics article{padding:1.5rem 1.25rem 1.5rem 0;display:grid;gap:.6rem;align-content:start;min-width:0}
+.publics article+article{padding-left:1.25rem;border-left:1px solid var(--filet)}
+.publics h3{font-size:1.45rem}
+.publics p{color:var(--encre-2);font-size:.98rem}
+
+/* Méthode */
+.etapes{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem;counter-reset:etape}
+.etapes li{counter-increment:etape;display:grid;gap:.5rem;align-content:start;padding-top:1rem;border-top:1px solid var(--filet);min-width:0}
+.etapes li::before{content:"Étape " counter(etape);font-family:var(--util);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ocre)}
+.etapes h3{font-size:1.3rem}
+.etapes p{color:var(--encre-2);font-size:.95rem}
+
+/* Nuanciers */
+.nuanciers{margin:clamp(2.5rem,6vw,4rem) 0 0;display:grid;gap:1rem}
+.nuanciers-images img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--enduit-2)}
+.nuanciers figcaption{display:flex;flex-wrap:wrap;gap:.25rem 1rem;align-items:baseline;border-top:1px solid var(--filet);padding-top:.75rem}
+.nuanciers figcaption span:last-child{color:var(--encre-2);font-size:.95rem}
+
+/* Carnet de chantier : colonnes, chaque photo garde son format */
+.carnet{columns:3 15rem;column-gap:.75rem}
+.carnet figure{position:relative;break-inside:avoid;margin:0 0 .75rem;background:var(--enduit-2)}
+.carnet img{width:100%;height:auto}
+.carnet figcaption{position:absolute;left:0;bottom:0;padding:.35rem .55rem;background:rgba(14,18,26,.72);color:#F4EFE3;font-family:var(--util);font-size:.68rem;letter-spacing:.05em}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(1.5rem,5vw,4rem);align-items:start}
+.coord{display:grid;gap:1.25rem}
+.coord dl{margin:0;display:grid;gap:1rem}
+.coord dt{font-family:var(--util);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--encre-2)}
+.coord dd{margin:.15rem 0 0;font-size:1.05rem;user-select:all}
+form{display:grid;gap:1rem;padding:clamp(1.25rem,3vw,2rem);background:var(--enduit-2);border:1px solid var(--filet)}
+.champs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.champ{display:grid;gap:.35rem;min-width:0}
+.champ label{font-size:.85rem;font-weight:600}
+.champ input,.champ select,.champ textarea{font:inherit;font-size:1rem;padding:.65rem .75rem;border:1px solid var(--filet);background:var(--enduit);color:var(--encre);border-radius:2px;width:100%}
+.champ textarea{min-height:7rem;resize:vertical}
+.ecrire{display:grid;gap:1rem;justify-items:start;padding:clamp(1.5rem,4vw,2.5rem);background:var(--enduit-2);border:1px solid var(--filet)}
+.ecrire-adresse{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.2rem);line-height:1.15;overflow-wrap:anywhere;user-select:all}
+.ecrire p:not(.label):not(.ecrire-adresse){color:var(--encre-2);max-width:30rem}
+
+footer{border-top:1px solid var(--filet);padding-block:1.75rem;display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;color:var(--encre-2);font-size:.85rem}
+.mentions summary{cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.mentions[open]{flex-basis:100%}
+.mentions dl{margin:1rem 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1rem 2rem}
+.mentions dt{font-family:var(--util);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+.mentions dd{margin:0;color:var(--encre);line-height:1.5}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr}
+  .nuanciers-images img{aspect-ratio:4/3}
+  .planches{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .etapes{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .carnet{columns:2}
+  .publics{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .publics article:nth-child(3){padding-left:0;border-left:0}
+  .publics article:nth-child(n+3){border-top:1px solid var(--filet)}
+  .contact{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  .nav ul{gap:.9rem}
+  .duo,.publics,.comparaisons,.artistes,.livret-ouverture{grid-template-columns:1fr}
+  .duo-photo img{aspect-ratio:4/3}
+  .livret-une{aspect-ratio:4/5}
+  .livret-grille{columns:2;column-gap:.6rem}
+  .pl figcaption{font-size:.82rem;flex-direction:column;gap:0}
+  .publics article,.publics article+article{padding:1.25rem 0;border-left:0;border-top:0;border-bottom:1px solid var(--filet)}
+  .champs{grid-template-columns:1fr}
+  .repere div{padding:1rem .6rem}
+}
+@media (max-width:420px){
+  .etapes{grid-template-columns:1fr}
+  .planches{gap:1.25rem .75rem}
+  .planche h4{font-size:1.15rem}
+}
+@media (prefers-reduced-motion:reduce){ .planche .photo img{transition:none} }
+</style>
+</head>
+<body>
+<header>
+  <div class="page nav">
+    <a class="marque" href="#accueil"><b>Atelier</b> Foreman</a>
+    <ul>
+      <li><a href="#duo">L'atelier</a></li>
+      <li><a href="#savoir-faire">Savoir-faire</a></li>
+      <li><a href="#livret">Enduits</a></li>
+      <li><a href="#avant-apres">Avant / après</a></li>
+      <li><a href="#artistes">Artistes</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="page" id="accueil">
+
+  <div class="hero">
+    <div>
+      <p class="label">Peinture décorative · enduits &amp; patines · Paris</p>
+      <h1>Deux générations, <em>un même pinceau.</em></h1>
+      <p class="chapo">Une mère et sa fille, peintres décoratrices et artistes. Enduits, patines, faux marbres et décors peints, pour les boutiques comme pour les particuliers.</p>
+      <div class="actions">
+        <a class="btn plein" href="#contact">Demander un devis</a>
+        <a class="btn" href="#savoir-faire">Voir nos techniques</a>
+      </div>
+    </div>
+    <figure>
+      <div class="hero-photo"><img src="img/hero-ciel.jpg" alt="Félicie, pinceau levé, retouche un plafond peint de ciel et d'oiseaux"></div>
+    </figure>
+  </div>
+
+  <div class="repere">
+    <div><strong>35 ans</strong><span class="label">de métier pour Emma</span></div>
+    <div><strong>2</strong><span class="label">peintres, un seul interlocuteur</span></div>
+    <div><strong>IDF</strong><span class="label">Paris, petite et grande couronne</span></div>
+  </div>
+
+  <section id="duo">
+    <div class="titre-section">
+      <p class="label">L'atelier</p>
+      <h2>Le métier se transmet, ici, à quatre mains.</h2>
+      <p>Nous travaillons ensemble sur chaque chantier : l'expérience de l'une, l'énergie et la polyvalence de l'autre.</p>
+    </div>
+    <figure class="duo-photo">
+      <img src="img/duo-atelier.jpg" alt="Félicie et Emma souriantes à l'atelier, lisseuses en main, autour d'un grand panneau d'enduit">
+    </figure>
+    <div class="duo">
+      <article class="portrait">
+        <div class="cadre"><img src="img/emma-escabeau.jpg" alt="Emma sur un escabeau, éponge à la main, peignant une cage d'escalier en fausse pierre" style="object-position:50% 30%"></div>
+        <span class="role">Peintre décoratrice · enduits &amp; patines · 35 ans d'expérience</span>
+        <h3>Emma Foreman</h3>
+        <p>Spécialiste des enduits décoratifs et des patines, elle travaille depuis trente-cinq ans en indépendante pour des ateliers de peinture décorative, sur les chantiers de boutiques de grandes maisons de luxe, et directement chez des particuliers. Elle adapte la matière à chaque lieu.</p>
+      </article>
+      <article class="portrait">
+        <div class="cadre"><img src="img/briques-detail.jpg" alt="Félicie, de dos, peint au pinceau des feuillages sur un pilier en fausses briques" style="object-position:50% 30%"></div>
+        <span class="role">Peintre décoratrice · diplômée en 2025</span>
+        <h3>Félicie Foreman</h3>
+        <p>Formée en alternance au sein d'une entreprise de restauration et de conservation de peinture murale, puis passée par un atelier de peinture décorative. Elle a participé à des chantiers de décors anciens : dégagement, restitution, dorure, faux marbres.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="savoir-faire">
+    <div class="titre-section">
+      <p class="label">Savoir-faire</p>
+      <h2>Nos techniques</h2>
+      <p>Chaque projet commence par des échantillons peints, validés avec vous avant d'attaquer le mur.</p>
+    </div>
+
+    <div class="famille">
+      <div class="famille-tete"><h3>Peinture décorative</h3><span class="label">7 techniques</span></div>
+      <div class="planches">
+        <article class="planche">
+          <div class="photo"><img src="img/e-patine-detail.jpg" alt="Enduit patiné gris clair laissant apparaître des couches ocre et vertes" loading="lazy"></div>
+          <h4>Enduits décoratifs</h4>
+          <p>Lissés, reliefs, peignés, effets de pierre. La spécialité d'Emma, pour les boutiques et les intérieurs. <a href="#livret">Voir le livret</a></p>
+        </article>
+        <article class="planche">
+          <div class="photo"><img src="img/faux-marbre.jpg" alt="Dallage en faux marbre blanc et vert foncé" loading="lazy"></div>
+          <h4>Faux marbre</h4>
+          <p>Dallages, cheminées, colonnes, soubassements. Veinage à la plume et au pinceau, glacis superposés.</p>
+        </article>
+        <article class="planche">
+          <div class="photo"><img src="img/faux-bois.jpg" alt="Porte entière peinte en faux chêne, avec ferrures et entrée de serrure" loading="lazy"></div>
+          <h4>Faux bois</h4>
+          <p>Portes, lambris, huisseries. Peigne et brosse à veiner pour imiter le fil et les maillures du chêne.</p>
+        </article>
+        <article class="planche">
+          <div class="photo"><img src="img/patine.jpg" alt="Patine rouge sombre avec motif de pieuvre bleue" loading="lazy"></div>
+          <h4>Patines</h4>
+          <p>Fonds nuancés, glacis, effets vieillis. L'autre spécialité d'Emma, avec des teintes préparées sur place.</p>
+        </article>
+        <article class="planche">
+          <div class="photo"><img src="img/trompe-loeil.jpg" alt="Décor peint d'un jardin méditerranéen encadré d'un treillage en trompe-l'œil" loading="lazy"></div>
+          <h4>Trompe-l'œil &amp; décor peint</h4>
+          <p>Paysages, treillages, volumes en perspective, décors sur toile marouflée ou directement au mur.</p>
+        </article>
+        <article class="planche">
+          <div class="photo"><img src="img/dorure.jpg" alt="Semis de motifs dorés au pochoir sur fond gris bleuté, plinthe dorée" loading="lazy"></div>
+          <h4>Dorure</h4>
+          <p>Dorure à la feuille, rechampis de moulures, semis de motifs au pochoir.</p>
+        </article>
+        <article class="planche">
+          <div class="photo"><img src="img/metaux.jpg" alt="Photophore ajouré suspendu, patiné en effet rouille" loading="lazy"></div>
+          <h4>Imitation métaux</h4>
+          <p>Bronze oxydé, fer rouillé, laiton vieilli, sur objets comme sur éléments de décor.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="famille">
+      <div class="famille-tete"><h3>Chantiers de décors anciens</h3><span class="label">Aux côtés d'entreprises de restauration</span></div>
+      <div class="planches">
+        <article class="planche">
+          <div class="photo"><img src="img/nettoyage.jpg" alt="Injection de coulis à la seringue dans un décor peint ancien" loading="lazy"></div>
+          <h4>Nettoyage &amp; dégagement</h4>
+          <p>Dégagement des repeints au scalpel, nettoyage des surfaces, refixage et injections.</p>
+        </article>
+        <article class="planche">
+          <div class="photo"><img src="img/restitution.jpg" alt="Félicie rebouche une lacune dans un enduit décoratif" loading="lazy"></div>
+          <h4>Restitution</h4>
+          <p>Comblement des lacunes et reprise des enduits, faux marbres et décors disparus.</p>
+        </article>
+        <article class="planche">
+          <div class="photo"><img src="img/restauration-apres.jpg" alt="Soubassement en faux marbre restauré sous une boiserie dorée" loading="lazy"></div>
+          <h4>Reprise de décors</h4>
+          <p>Retouches et raccords de faux marbres et de décors peints, sous la direction des restaurateurs.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="livret">
+    <div class="livret-ouverture">
+      <figure class="livret-une">
+        <img src="img/e-drape.jpg" alt="Angle de mur en enduit blanc travaillé en plis horizontaux, comme un drapé">
+      </figure>
+      <div class="livret-texte">
+        <p class="label">Livret · Emma Foreman</p>
+        <h2>Enduits décoratifs</h2>
+        <p>Trente-cinq ans de murs travaillés à la main, chez des particuliers et, en indépendante pour des ateliers, dans les boutiques de grandes maisons de luxe. Chaque enduit est composé pour son lieu : teinte, relief, brillance et geste de l'outil.</p>
+        <p class="livret-ateliers"><span class="label">Réalisés avec les ateliers</span><span>Béchet</span><span>AC Matière</span></p>
+        <p class="label livret-compte">9 planches · touchez une photo pour l'agrandir</p>
+      </div>
+    </div>
+    <div class="livret-grille" id="livret-grille">
+      <figure class="pl"><button type="button"><img src="img/e-traits.jpg" alt="Mur blanc en enduit marqué de traits horizontaux à la lisseuse" loading="lazy"></button></figure>
+      <figure class="pl"><button type="button"><img src="img/e-niche.jpg" alt="Niche vitrée avec bande d'enduit blanc en relief" loading="lazy"></button></figure>
+      <figure class="pl"><button type="button"><img src="img/e-ecorce.jpg" alt="Enduit clair peigné en relief" loading="lazy"></button></figure>
+      <figure class="pl"><button type="button"><img src="img/e-nid.jpg" alt="Enduit nacré en relief à motif de nid d'abeille" loading="lazy"></button></figure>
+      <figure class="pl"><button type="button"><img src="img/e-patine-mur.jpg" alt="Mur en enduit patiné gris clair aux touches ocre et vertes" loading="lazy"></button></figure>
+      <figure class="pl"><button type="button"><img src="img/e-peigne-fin.jpg" alt="Enduit gris finement peigné" loading="lazy"></button></figure>
+      <figure class="pl"><button type="button"><img src="img/e-plateau.jpg" alt="Grand panneau d'enduit gris lissé en ondulations, à l'atelier" loading="lazy"></button></figure>
+      <figure class="pl"><button type="button"><img src="img/e-patine-detail.jpg" alt="Détail d'enduit patiné laissant apparaître des couches ocre et vertes" loading="lazy"></button></figure>
+      <figure class="pl"><button type="button"><img src="img/e-escalier.jpg" alt="Soubassement d'escalier en enduit patiné" loading="lazy"></button></figure>
+    </div>
+  </section>
+
+  <dialog id="visionneuse" aria-label="Photo agrandie">
+    <figure>
+      <img id="v-img" src="" alt="">
+    </figure>
+    <div class="v-commandes">
+      <button type="button" class="btn" id="v-prec" aria-label="Photo précédente">←</button>
+      <button type="button" class="btn" id="v-fermer">Fermer</button>
+      <button type="button" class="btn" id="v-suiv" aria-label="Photo suivante">→</button>
+    </div>
+  </dialog>
+
+  <section id="avant-apres">
+    <div class="titre-section">
+      <p class="label">Avant / après</p>
+      <h2>Faites glisser pour comparer</h2>
+    </div>
+    <div class="comparaisons">
+      <div class="compare">
+        <div class="scene" style="--pos:50%">
+          <img src="img/restauration-apres.jpg" alt="Après restauration : faux marbre restitué" loading="lazy">
+          <img class="avant" src="img/restauration-avant.jpg" alt="Avant restauration : faux marbre lacunaire" loading="lazy">
+          <span class="trait"></span>
+          <span class="tag g">Avant</span><span class="tag d">Après</span>
+        </div>
+        <input type="range" id="cmp-marbre" min="0" max="100" value="50" aria-label="Comparer avant et après, soubassement en faux marbre">
+        <h3>Soubassement en faux marbre</h3>
+        <p>Lacunes comblées puis réintégrées pour retrouver la continuité du veinage.</p>
+      </div>
+      <div class="compare">
+        <div class="scene" style="--pos:50%">
+          <img src="img/dorure-apres.jpg" alt="Après : montant redoré" loading="lazy">
+          <img class="avant" src="img/dorure-avant.jpg" alt="Avant : montant préparé à l'assiette rouge" loading="lazy">
+          <span class="trait"></span>
+          <span class="tag g">Assiette</span><span class="tag d">Doré</span>
+        </div>
+        <input type="range" id="cmp-dorure" min="0" max="100" value="50" aria-label="Comparer avant et après, montant redoré">
+        <h3>Montant de boiserie redoré</h3>
+        <p>Pose de l'assiette rouge, puis de la feuille d'or, raccordée aux dorures anciennes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="titre-section">
+      <p class="label">Pour qui</p>
+      <h2>Nous intervenons pour</h2>
+    </div>
+    <div class="publics">
+      <article>
+        <h3>Ateliers de peinture décorative</h3>
+        <p>En renfort indépendant sur vos chantiers de boutiques et d'intérieurs, avec le niveau de finition et le respect des délais qu'ils exigent.</p>
+      </article>
+      <article>
+        <h3>Les particuliers</h3>
+        <p>Un salon, une entrée, une cheminée à remettre en valeur. Nous venons voir, conseillons et réalisons.</p>
+      </article>
+      <article>
+        <h3>Architectes &amp; décorateurs</h3>
+        <p>En sous-traitance sur vos chantiers, avec échantillons et planning tenus. Disponibles en renfort ponctuel.</p>
+      </article>
+      <article>
+        <h3>Ateliers de restauration</h3>
+        <p>Renfort d'équipe en peinture décorative sur les chantiers de décors anciens.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="methode">
+    <div class="titre-section">
+      <p class="label">Méthode</p>
+      <h2>Comment se déroule un chantier</h2>
+    </div>
+    <ol class="etapes">
+      <li><h3>Visite</h3><p>Nous venons voir le support, prenons les mesures et écoutons ce que vous imaginez.</p></li>
+      <li><h3>Devis &amp; échantillons</h3><p>Un devis détaillé et des échantillons peints pour valider teintes et effets.</p></li>
+      <li><h3>Chantier</h3><p>Protection des lieux, préparation des fonds, exécution du décor. Vous suivez l'avancée.</p></li>
+      <li><h3>Réception</h3><p>Visite de fin de chantier ensemble, retouches éventuelles, conseils d'entretien.</p></li>
+    </ol>
+    <figure class="nuanciers">
+      <div class="nuanciers-images">
+        <img src="img/nuancier-relief.jpg" alt="Carrés de nuancier en lumière rasante, laissant voir la texture de l'enduit" loading="lazy">
+      </div>
+    </figure>
+  </section>
+
+  <section id="carnet">
+    <div class="titre-section">
+      <p class="label">Carnet de chantier</p>
+      <h2>À l'atelier et sur les échafaudages</h2>
+    </div>
+    <div class="carnet">
+      <figure><img src="img/laque-panneaux.jpg" alt="Félicie à genoux pose de l'enduit gras sur une série de panneaux aux veines gris-bleu" loading="lazy"></figure>
+      <figure><img src="img/laque-detail.jpg" alt="Félicie accroupie travaille à la main gantée un panneau de laque noir et blanc" loading="lazy"></figure>
+      <figure class="large"><img src="img/g-decor-releve.jpg" alt="Décor peint ancien à motifs, en cours de dégagement" loading="lazy"></figure>
+      <figure><img src="img/g-dorure-geste.jpg" alt="Pose de feuille d'or au pochoir dans un angle" loading="lazy"></figure>
+      <figure><img src="img/g-cube.jpg" alt="Volume en trompe-l'œil violet sur fond ocre" loading="lazy"></figure>
+      <figure><img src="img/g-jardin.jpg" alt="Décor de jardin en cours à l'atelier, avec documents de référence" loading="lazy"></figure>
+      <figure><img src="img/g-application.jpg" alt="Application de peinture sur un grand panneau" loading="lazy"></figure>
+      <figure><img src="img/g-echafaudage.jpg" alt="Mur en cours de restitution sous échafaudage" loading="lazy"></figure>
+      <figure><img src="img/briques-chantier.jpg" alt="Félicie sur un escabeau peignant un pilier en fausses briques, à côté d'un grand décor mural de paysage" loading="lazy"></figure>
+      <figure><img src="img/duo-travail.jpg" alt="Félicie et Emma lissent ensemble un grand panneau d'enduit à l'atelier" loading="lazy"></figure>
+      <figure><img src="img/emma-ogive.jpg" alt="Emma sur une échelle sous une arche en ogive, dans une cage d'escalier en fausse pierre" loading="lazy"></figure>
+      <figure class="large"><img src="img/d-geometrique.jpg" alt="Grand décor géométrique noir et ocre peint dans une boutique" loading="lazy"></figure>
+      <figure><img src="img/d-arbre-chien.jpg" alt="Toile peinte d'un arbre blanc et d'un chien sur fond doré texturé" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section id="artistes">
+    <div class="titre-section">
+      <p class="label">Côté atelier</p>
+      <h2>Artistes toutes les deux</h2>
+      <p>En dehors des chantiers, chacune poursuit sa pratique. Ce travail de la matière nourrit nos décors.</p>
+    </div>
+    <div class="artistes">
+      <article class="artiste">
+        <div class="cadre photo-art"><img src="img/sculpture.jpg" alt="Luminaire sculpté en plâtre blanc en forme de champignon, au pied élancé, devant un rideau beige" loading="lazy"></div>
+        <span class="discipline">Sculpture</span>
+        <h3>Félicie Foreman</h3>
+        <p>Luminaires champignons en plâtre, entre sous-bois et veilleuse.</p>
+      </article>
+      <article class="artiste">
+        <div class="cadre photo-art"><img src="img/ceramique.jpg" alt="Pot en céramique émaillée rouge vif posé sur des pattes, avec un bégonia en fleurs" loading="lazy"></div>
+        <span class="discipline">Céramique</span>
+        <h3>Emma Foreman</h3>
+        <p>Pièces façonnées à la main et émaillées, entre objet utile et petite créature.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <div class="coord">
+        <div class="titre-section" style="margin-bottom:0">
+          <p class="label">Contact</p>
+          <h2>Parlons de votre projet</h2>
+          <p>Décrivez-nous le lieu et ce que vous avez en tête. Nous répondons sous 48 heures.</p>
+        </div>
+        <dl>
+          <div><dt>E-mail</dt><dd>contact@atelier-foreman.fr</dd></div>
+          <div><dt>Zone d'intervention</dt><dd>Paris &amp; Île-de-France</dd></div>
+        </dl>
+      </div>
+      <div class="ecrire">
+        <p class="label">Écrivez-nous</p>
+        <p class="ecrire-adresse">contact@atelier-foreman.fr</p>
+        <p>Joignez si possible quelques photos du lieu : cela nous aide à vous répondre précisément.</p>
+        <a class="btn plein" href="mailto:contact@atelier-foreman.fr?subject=Demande%20de%20devis">Écrire un e-mail</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="page">
+  <span>Atelier Foreman · Peinture décorative, enduits &amp; patines · Paris</span>
+  <details class="mentions" id="mentions-legales">
+    <summary>Mentions légales</summary>
+    <dl>
+      <div><dt>Éditrice et directrice de la publication</dt><dd>Félicie Foreman<br>121 rue du Faubourg du Temple, 75010 Paris<br>SIRET 106 950 090 00014<br>contact@atelier-foreman.fr</dd></div>
+      <div><dt>Hébergement</dt><dd>GitHub, Inc.<br>88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis</dd></div>
+      <div><dt>Contenus</dt><dd>Les photographies et textes de ce site sont la propriété d'Atelier Foreman. Toute reproduction sans autorisation est interdite.</dd></div>
+      <div><dt>Données personnelles</dt><dd>Ce site ne dépose aucun cookie et ne collecte aucune donnée. Les e-mails que vous nous adressez servent uniquement à répondre à votre demande.</dd></div>
+    </dl>
+  </details>
+</footer>
+
+<script>
+document.querySelectorAll('.compare').forEach(function(c){
+  var scene = c.querySelector('.scene'), range = c.querySelector('input[type=range]');
+  function set(v){ v = Math.max(0, Math.min(100, v)); scene.style.setProperty('--pos', v + '%'); range.value = v; }
+  range.addEventListener('input', function(){ set(+range.value); });
+  var drag = false;
+  function fromEvent(e){ var r = scene.getBoundingClientRect(); set((e.clientX - r.left) / r.width * 100); }
+  scene.addEventListener('pointerdown', function(e){ drag = true; fromEvent(e); });
+  window.addEventListener('pointermove', function(e){ if(drag) fromEvent(e); });
+  window.addEventListener('pointerup', function(){ drag = false; });
+});
+(function(){
+  var dlg = document.getElementById('visionneuse');
+  var planches = Array.prototype.slice.call(document.querySelectorAll('#livret-grille .pl'));
+  var vImg = document.getElementById('v-img');
+  var i = 0;
+  function montrer(n){
+    i = (n + planches.length) % planches.length;
+    var img = planches[i].querySelector('img');
+    vImg.src = img.src; vImg.alt = img.alt;
+    
+  }
+  planches.forEach(function(p, n){
+    p.querySelector('button').addEventListener('click', function(){
+      montrer(n);
+      if (dlg.showModal) { dlg.showModal(); } else { dlg.setAttribute('open', ''); }
+    });
+  });
+  document.getElementById('v-prec').addEventListener('click', function(){ montrer(i - 1); });
+  document.getElementById('v-suiv').addEventListener('click', function(){ montrer(i + 1); });
+  document.getElementById('v-fermer').addEventListener('click', function(){ dlg.close ? dlg.close() : dlg.removeAttribute('open'); });
+  dlg.addEventListener('click', function(e){ if (e.target === dlg) dlg.close(); });
+  dlg.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowLeft') montrer(i - 1);
+    if (e.key === 'ArrowRight') montrer(i + 1);
+  });
+})();
+</script>
+</body>
+</html>
